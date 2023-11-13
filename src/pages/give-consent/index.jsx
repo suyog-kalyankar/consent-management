@@ -22,7 +22,7 @@ const ConsentForm = () => {
   // dispatches postConsent action and navigates to consents page
   const handlePostConsent = () => {
     const param = {
-      fname: fullName,
+      fname: fullName.trim(),
       email,
       consents: checkedConsents,
     };

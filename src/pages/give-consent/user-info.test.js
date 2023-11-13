@@ -7,7 +7,7 @@ describe("UserInfo component", () => {
   it("renders TextField components", () => {
     // Arrange
     render(
-      <UserInfo name="" email="" setFullName={() => {}} setEmail={() => {}} />
+      <UserInfo name="" email="" onFullName={() => {}} onEmail={() => {}} />
     );
 
     // Assert
@@ -22,8 +22,8 @@ describe("UserInfo component", () => {
       <UserInfo
         name=""
         email=""
-        setFullName={setFullNameMock}
-        setEmail={() => {}}
+        onFullName={setFullNameMock}
+        onEmail={() => {}}
       />
     );
 
@@ -44,8 +44,8 @@ describe("UserInfo component", () => {
       <UserInfo
         name=""
         email=""
-        setFullName={() => {}}
-        setEmail={setEmailMock}
+        onFullName={() => {}}
+        onEmail={setEmailMock}
       />
     );
 
@@ -66,8 +66,8 @@ describe("UserInfo component", () => {
       <UserInfo
         name=""
         email=""
-        setFullName={setFullNameMock}
-        setEmail={() => {}}
+        onFullName={setFullNameMock}
+        onEmail={() => {}}
       />
     );
 

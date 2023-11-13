@@ -1,14 +1,14 @@
 import { Grid, TextField } from "@mui/material";
 
-const UserInfo = ({ name, email, setFullName, setEmail }) => {
+const UserInfo = ({ name, email, onFullName, onEmail }) => {
   const handleName = (e) => {
     if (e.target.value !== " ") {
-      setFullName(e.target.value);
+      onFullName(e.target.value);
     }
   };
 
   const handleEmail = (e) => {
-    setEmail(e.target.value);
+    onEmail(e.target.value);
   };
 
   return (

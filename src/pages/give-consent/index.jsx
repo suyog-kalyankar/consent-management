@@ -31,9 +31,7 @@ const ConsentForm = () => {
   };
 
   // return bool value which is used for enable/disable consent-selector component
-  const isConsentSelectorDisabled = () => {
-    return !fullName || !validateEmail(email);
-  };
+  const isConsentSelectorDisabled = !(fullName && validateEmail(email));
 
   return (
     <Paper
@@ -56,8 +54,8 @@ const ConsentForm = () => {
           <UserInfo
             name={fullName}
             email={email}
-            setFullName={setFullName}
-            setEmail={setEmail}
+            onFullName={setFullName}
+            onEmail={setEmail}
           />
         </Grid>
         <Grid item md={10} xs={10}>
@@ -73,9 +71,9 @@ const ConsentForm = () => {
             }}
           >
             <ConsentSelector
-              disabled={isConsentSelectorDisabled()}
+              disabled={isConsentSelectorDisabled}
               checkedConsents={checkedConsents}
-              setCheckedConsents={setCheckedConsents}
+              onCheckedConsents={setCheckedConsents}
             />
           </div>
         </Grid>

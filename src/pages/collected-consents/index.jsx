@@ -37,8 +37,12 @@ const Consents = () => {
     }
   }, [consents?.length]);
 
+  if (!loadingConsent && consents?.length === 0) {
+    return <Typography sx={{ color: "black" }}>{NO_DATA_AVAILABLE}</Typography>;
+  }
+
   return !loadingConsent ? (
-    consents?.length > 0 ? (
+    consents?.length > 0 && (
       <Grid
         container
         justifyContent="center"
@@ -69,8 +73,6 @@ const Consents = () => {
           />
         </Grid>
       </Grid>
-    ) : (
-      <Typography sx={{ color: "black" }}>{NO_DATA_AVAILABLE}</Typography>
     )
   ) : (
     <Typography>{LOADING}</Typography>

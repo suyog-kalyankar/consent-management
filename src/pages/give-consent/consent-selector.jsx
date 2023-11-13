@@ -1,16 +1,16 @@
 import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 import { CONSENTS_LIST } from "../../constants/app-constants";
 
-const ConsentSelector = ({ disabled, checkedConsents, setCheckedConsents }) => {
+const ConsentSelector = ({ disabled, checkedConsents, onCheckedConsents }) => {
 
   // handles selection of consent checkbox
   const handleConsentChange = (consent) => {
     if (checkedConsents.includes(consent)) {
-      setCheckedConsents((oldValues) => {
+      onCheckedConsents((oldValues) => {
         return oldValues.filter((val) => val !== consent);
       });
     } else {
-      setCheckedConsents((data) => [...data, consent]);
+      onCheckedConsents((data) => [...data, consent]);
     }
   };
 

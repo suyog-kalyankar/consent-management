@@ -5,7 +5,7 @@ Welcome to the Consent management application! This application allows users to 
 ## Getting Started
 
 1. Clone the repository:
-```git clone https://github.com/your-username/give-consent-app.git```
+```git clone https://github.com/suyog-kalyankar/consent-management.git```
 
 2. Install dependencies:
 ```cd consent-management```
@@ -43,6 +43,7 @@ After giving consent, you will be redirected to the consents page. Here, consent
 Request Payload:
 ```ruby
 {
+  "id": 1,
   "fname": "John Doe",
   "email": "john.doe@example.com",
   "consents": ["Receive newsletter", "Allow tracking"]
@@ -58,6 +59,12 @@ Response:
 Status: 200 OK
 ```ruby
 {
+metadata: {
+    currentPage: 1,
+    pageSize: 2,
+    totalCount: 5,
+    totalPages: 3,
+  },
   "data": [
     {
       "id": 1,

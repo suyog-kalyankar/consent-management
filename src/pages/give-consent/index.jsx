@@ -64,7 +64,14 @@ const ConsentForm = () => {
           <Typography sx={{ p: 4 }}>{CONSENT_APPROVAL_TEXT}</Typography>
         </Grid>
         <Grid item md={10} xs={10}>
-          <div style={{ display: "flex", paddingTop: 40, border: '0.5px solid lightgray', padding: '1rem' }}>
+          <div
+            style={{
+              display: "flex",
+              paddingTop: 40,
+              border: "0.5px solid lightgray",
+              padding: "1rem",
+            }}
+          >
             <ConsentSelector
               disabled={isConsentSelectorDisabled()}
               checkedConsents={checkedConsents}

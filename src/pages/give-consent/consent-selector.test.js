@@ -5,9 +5,7 @@ import ConsentSelector from "./consent-selector";
 
 // Mocking the constants
 jest.mock("../../constants/app-constants", () => ({
-  CONSENTS_LIST: { 1: "Consent 1",
-   2: "Consent 2", 
-},
+  CONSENTS_LIST: { 1: "Consent 1", 2: "Consent 2" },
 }));
 
 describe("ConsentSelector component", () => {
@@ -19,5 +17,4 @@ describe("ConsentSelector component", () => {
     expect(screen.getByText("Consent 1")).toBeInTheDocument();
     expect(screen.getByText("Consent 2")).toBeInTheDocument();
   });
-
 });

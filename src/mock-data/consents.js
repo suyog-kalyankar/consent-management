@@ -7,11 +7,13 @@ export const mock_data = {
   },
   data: [
     {
+      id: 1,
       fname: "Suyog Kalyankar",
       email: "suyog@gmail.com",
       consents: ["Receive newsletter"],
     },
     {
+      id: 2,
       fname: "Suyog K",
       email: "suyogk@gmail.com",
       consents: [
@@ -20,6 +22,7 @@ export const mock_data = {
       ],
     },
     {
+      id: 3,
       fname: "S K",
       email: "sk@gmail.com",
       consents: [
@@ -29,6 +32,7 @@ export const mock_data = {
       ],
     },
     {
+      id: 4,
       fname: "S Kalyankar",
       email: "skalyankar@gmail.com",
       consents: [
@@ -37,6 +41,7 @@ export const mock_data = {
       ],
     },
     {
+      id: 5,
       fname: "Matthew P",
       email: "matthewp@gmail.com",
       consents: ["Contribute to annonymous visit statistics"],

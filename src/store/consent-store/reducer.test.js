@@ -1,4 +1,3 @@
-
 import {
   POST_CONSENT,
   POST_CONSENT_SUCCESS,
@@ -6,47 +5,55 @@ import {
   GET_CONSENTS,
   GET_CONSENTS_SUCCESS,
   GET_CONSENTS_FAIL,
-} from './action-types';
-import ConsentReducer from './reducer';
+} from "./action-types";
+import ConsentReducer from "./reducer";
 
-describe('ConsentReducer', () => {
-  it('should handle POST_CONSENT', () => {
+describe("ConsentReducer", () => {
+  it("should handle POST_CONSENT", () => {
     const action = {
       type: POST_CONSENT,
-      payload: { fname: 'Suyog', email: 'suyog@gmail.com', consents: ['Receive newsletter'] },
+      payload: {
+        fname: "Suyog",
+        email: "suyog@gmail.com",
+        consents: ["Receive newsletter"],
+      },
     };
 
     const newState = ConsentReducer(undefined, action);
 
     expect(newState.consents).toEqual([action.payload]);
     expect(newState.loadingPostConsent).toBe(true);
-    expect(newState.error.message).toBe('');
+    expect(newState.error.message).toBe("");
   });
 
-  it('should handle POST_CONSENT_SUCCESS', () => {
+  it("should handle POST_CONSENT_SUCCESS", () => {
     const initialState = {
       consents: [],
       loadingPostConsent: true,
-      error: { message: '' },
+      error: { message: "" },
     };
 
     const action = {
       type: POST_CONSENT_SUCCESS,
-      payload: { fname: 'Suyog', email: 'suyog@gmail.com', consents: ['Receive newsletter'] },
+      payload: {
+        fname: "Suyog",
+        email: "suyog@gmail.com",
+        consents: ["Receive newsletter"],
+      },
     };
 
     const newState = ConsentReducer(initialState, action);
 
     expect(newState.consents).toEqual([action.payload]);
     expect(newState.loadingPostConsent).toBe(false);
-    expect(newState.error.message).toBe('');
+    expect(newState.error.message).toBe("");
   });
 
-  it('should handle POST_CONSENT_FAIL', () => {
+  it("should handle POST_CONSENT_FAIL", () => {
     const initialState = {
       consents: [],
       loadingPostConsent: true,
-      error: { message: '' },
+      error: { message: "" },
     };
 
     const action = {
@@ -57,42 +64,48 @@ describe('ConsentReducer', () => {
 
     expect(newState.consents).toEqual([]);
     expect(newState.loadingPostConsent).toBe(false);
-    expect(newState.error.message).toBe('Failed to post consent');
+    expect(newState.error.message).toBe("Failed to post consent");
   });
 
-  it('should handle GET_CONSENTS', () => {
+  it("should handle GET_CONSENTS", () => {
     const action = { type: GET_CONSENTS };
 
     const newState = ConsentReducer(undefined, action);
 
     expect(newState.loadingConsent).toBe(true);
-    expect(newState.error.message).toBe('');
+    expect(newState.error.message).toBe("");
   });
 
-  it('should handle GET_CONSENTS_SUCCESS', () => {
+  it("should handle GET_CONSENTS_SUCCESS", () => {
     const initialState = {
       consents: [],
       loadingConsent: true,
-      error: { message: '' },
+      error: { message: "" },
     };
 
     const action = {
       type: GET_CONSENTS_SUCCESS,
-      payload: [{ fname: 'Suyog', email: 'suyog@gmail.com', consents: ['Receive newsletter'] }],
+      payload: [
+        {
+          fname: "Suyog",
+          email: "suyog@gmail.com",
+          consents: ["Receive newsletter"],
+        },
+      ],
     };
 
     const newState = ConsentReducer(initialState, action);
 
     expect(newState.consents).toEqual(action.payload.data);
     expect(newState.loadingConsent).toBe(false);
-    expect(newState.error.message).toBe('');
+    expect(newState.error.message).toBe("");
   });
 
-  it('should handle GET_CONSENTS_FAIL', () => {
+  it("should handle GET_CONSENTS_FAIL", () => {
     const initialState = {
       consents: [],
       loadingConsent: true,
-      error: { message: '' },
+      error: { message: "" },
     };
 
     const action = { type: GET_CONSENTS_FAIL };
@@ -101,6 +114,6 @@ describe('ConsentReducer', () => {
 
     expect(newState.consents).toEqual([]);
     expect(newState.loadingConsent).toBe(false);
-    expect(newState.error.message).toBe('Failed to get consents');
+    expect(newState.error.message).toBe("Failed to get consents");
   });
 });

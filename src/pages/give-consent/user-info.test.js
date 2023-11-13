@@ -1,24 +1,32 @@
-import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
-import UserInfo from './user-info';
+import React from "react";
+import { render, fireEvent, screen } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
+import UserInfo from "./user-info";
 
-
-describe('UserInfo component', () => {
-  it('renders TextField components', () => {
+describe("UserInfo component", () => {
+  it("renders TextField components", () => {
     // Arrange
-    render(<UserInfo name="" email="" setFullName={() => {}} setEmail={() => {}} />);
-    
+    render(
+      <UserInfo name="" email="" setFullName={() => {}} setEmail={() => {}} />
+    );
+
     // Assert
-    expect(screen.getByText('Full name')).toBeInTheDocument();
-    expect(screen.getByText('Email Address')).toBeInTheDocument();
+    expect(screen.getByText("Full name")).toBeInTheDocument();
+    expect(screen.getByText("Email Address")).toBeInTheDocument();
   });
 
-   it('handles user input changes for full name', () => {
+  it("handles user input changes for full name", () => {
     // Arrange
     const setFullNameMock = jest.fn();
-    render(<UserInfo name="" email="" setFullName={setFullNameMock} setEmail={() => {}} />);
-    
+    render(
+      <UserInfo
+        name=""
+        email=""
+        setFullName={setFullNameMock}
+        setEmail={() => {}}
+      />
+    );
+
     // Act
     const fname = screen.getByTestId("f-name");
     fireEvent.change(fname, {
@@ -26,15 +34,21 @@ describe('UserInfo component', () => {
     });
 
     // Assert
-    expect(setFullNameMock).toHaveBeenCalledWith('Suyog K');
+    expect(setFullNameMock).toHaveBeenCalledWith("Suyog K");
   });
 
-  
-  it('handles user input changes for email', () => {
+  it("handles user input changes for email", () => {
     // Arrange
     const setEmailMock = jest.fn();
-    render(<UserInfo name="" email="" setFullName={() => {}} setEmail={setEmailMock} />);
-    
+    render(
+      <UserInfo
+        name=""
+        email=""
+        setFullName={() => {}}
+        setEmail={setEmailMock}
+      />
+    );
+
     // Act
     const email = screen.getByTestId("email");
     fireEvent.change(email, {
@@ -42,15 +56,21 @@ describe('UserInfo component', () => {
     });
 
     // Assert
-    expect(setEmailMock).toHaveBeenCalledWith('suyog@gmail.com');
+    expect(setEmailMock).toHaveBeenCalledWith("suyog@gmail.com");
   });
 
-
-  it('does not set full name when input is a single space', () => {
+  it("does not set full name when input is a single space", () => {
     // Arrange
     const setFullNameMock = jest.fn();
-    render(<UserInfo name="" email="" setFullName={setFullNameMock} setEmail={() => {}} />);
-    
+    render(
+      <UserInfo
+        name=""
+        email=""
+        setFullName={setFullNameMock}
+        setEmail={() => {}}
+      />
+    );
+
     // Act
     const fname = screen.getByTestId("f-name");
     fireEvent.change(fname, {

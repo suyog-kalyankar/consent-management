@@ -21,7 +21,7 @@ describe("App component", () => {
     // Assert
     expect(
       screen.getByRole("tab", { name: "Give Consent" })
-    ).toBeInTheDocument(); // Adjust this based on the content of your Home component
+    ).toBeInTheDocument();
   });
 
   it('renders Home component for "/give-consent" path', () => {

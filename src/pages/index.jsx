@@ -1,6 +1,3 @@
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Box from "@mui/material/Box";
 import {
   COLLECTED_CONSENT,
   CONSENTS_URL,
@@ -10,7 +7,7 @@ import {
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Consents from "./collected-consents";
-import { Grid } from "@mui/material";
+import { Box, Grid, Tab, Tabs } from "@mui/material";
 import ConsentForm from "./give-consent";
 import { a11yProps } from "../utils/util";
 import { TabPanel } from "../components/tab-panel/tab-panel";

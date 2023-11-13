@@ -5,6 +5,7 @@ export function a11yProps(index) {
   };
 }
 
+// returns bool value using regex to check is email entered valid or not
 export const validateEmail = (email) => {
   return String(email)
     .toLowerCase()

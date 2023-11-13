@@ -1,9 +1,8 @@
-// Import necessary testing libraries and your component
 import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { Provider } from "react-redux";
-import configureStore from "redux-mock-store"; // Assuming you're using redux-mock-store
+import configureStore from "redux-mock-store";
 import { mock_data } from "../../mock-data/consents";
 import Consents from ".";
 

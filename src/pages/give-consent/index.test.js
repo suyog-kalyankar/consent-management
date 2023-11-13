@@ -22,7 +22,6 @@ describe("ConsentForm component", () => {
   });
 
   it("renders UserInfo and ConsentSelector components", () => {
-    // Arrange
     render(
       <Provider store={store}>
         <ConsentForm />
@@ -41,7 +40,7 @@ describe("ConsentForm component", () => {
         <ConsentForm />
       </Provider>
     );
-    // Act
+
     const fname = screen.getByTestId("f-name");
     const email = screen.getByTestId("email");
     fireEvent.change(fname, {
@@ -51,13 +50,11 @@ describe("ConsentForm component", () => {
       target: { value: "suyog@gmail.com" },
     });
 
-    // Assert
     expect(screen.getByTestId("f-name").value).toBe("Suyog K");
     expect(screen.getByTestId("email").value).toBe("suyog@gmail.com");
   });
 
   it("handles consent selection", () => {
-    // Act
     render(
       <Provider store={store}>
         <ConsentForm />
@@ -80,7 +77,6 @@ describe("ConsentForm component", () => {
         <ConsentForm />
       </Provider>
     );
-    // Assert
     expect(screen.getByRole("button", { name: "Give Consent" })).toBeDisabled();
   });
 });

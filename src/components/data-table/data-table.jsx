@@ -28,10 +28,10 @@ const DataTable = ({ rows, page, rowsPerPage }) => {
               (page - 1) * rowsPerPage,
               (page - 1) * rowsPerPage + rowsPerPage
             )
-            .map((row, index) => (
+            .map((row) => (
               <TableRow
                 hover
-                key={index}
+                key={row.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell component="th" scope="row">

@@ -39,7 +39,7 @@ const DataTable = ({ rows, page, rowsPerPage }) => {
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  {row.fname}{row.id}
+                  {row.fname}
                 </TableCell>
                 <TableCell align="right">{row.email}</TableCell>
                 <TableCell align="right">

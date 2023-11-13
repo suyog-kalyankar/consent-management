@@ -8,8 +8,16 @@ import {
   TableRow,
 } from "@mui/material";
 import { TABLE_CELLS } from "../../constants/app-constants";
+import { useMemo } from "react";
 
 const DataTable = ({ rows, page, rowsPerPage }) => {
+  const getRowsPerPage = useMemo(() => {
+    return rows.slice(
+      (page - 1) * rowsPerPage,
+      (page - 1) * rowsPerPage + rowsPerPage
+    );
+  }, [rows, page, rowsPerPage]);
+
   return (
     <TableContainer component={Paper}>
       <Table aria-label="consent table">
@@ -23,11 +31,7 @@ const DataTable = ({ rows, page, rowsPerPage }) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows
-            .slice(
-              (page - 1) * rowsPerPage,
-              (page - 1) * rowsPerPage + rowsPerPage
-            )
+          {getRowsPerPage
             .map((row) => (
               <TableRow
                 hover
@@ -35,7 +39,7 @@ const DataTable = ({ rows, page, rowsPerPage }) => {
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  {row.fname}
+                  {row.fname}{row.id}
                 </TableCell>
                 <TableCell align="right">{row.email}</TableCell>
                 <TableCell align="right">

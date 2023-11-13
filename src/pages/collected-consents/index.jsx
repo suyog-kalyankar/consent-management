@@ -37,12 +37,14 @@ const Consents = () => {
     }
   }, [consents?.length]);
 
-  if (!loadingConsent && consents?.length === 0) {
-    return <Typography sx={{ color: "black" }}>{NO_DATA_AVAILABLE}</Typography>;
+  if (loadingConsent) {
+    return <Typography>{LOADING}</Typography>;
   }
 
-  return !loadingConsent ? (
-    consents?.length > 0 && (
+  if (!loadingConsent && consents?.length === 0) {
+    return <Typography sx={{ color: "black" }}>{NO_DATA_AVAILABLE}</Typography>;
+  } else {
+    return (
       <Grid
         container
         justifyContent="center"
@@ -73,10 +75,8 @@ const Consents = () => {
           />
         </Grid>
       </Grid>
-    )
-  ) : (
-    <Typography>{LOADING}</Typography>
-  );
+    );
+  }
 };
 
 export default Consents;

@@ -1,22 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { useRoutes } from "react-router-dom";
+import "./App.css";
+import Home from "./pages";
+import { CONSENTS_URL, GIVE_CONSENT_URL } from "./constants/app-constants";
 
 function App() {
+  let routes = useRoutes([
+    { path: "/", element: <Home /> },
+    { path: GIVE_CONSENT_URL, element: <Home /> },
+    { path: CONSENTS_URL, element: <Home /> }
+  ]);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {routes}
       </header>
     </div>
   );

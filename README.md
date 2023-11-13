@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# Consent Management Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Consent management application! This application allows users to provide their consent by filling out a form and then displays the consents on a separate page.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+1. Clone the repository:
+git clone https://github.com/your-username/give-consent-app.git
 
-### `npm start`
+2. Install dependencies:
+cd consent-management
+npm install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. Run the application:
+npm start
+The application will be available at http://localhost:3000.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
+Navigate to the home page:
+
+Visit http://localhost:3000/give-consent to access the consent form.
+
+Fill out the form:
+
+Provide your full name and email address in the form. Once you have entered valid information, the consent selector checkboxes will be enabled.
+
+Select consent(s):
+
+Choose at least one consent option from the enabled checkboxes. The "Give Consent" button will become active once you have made a selection.
+
+Give Consent:
+
+Click the "Give Consent" button to submit your consent. This will trigger a POST request to the /consents API with the provided information.
+
+View Consents:
+
+After giving consent, you will be redirected to the consents page. Here, consents are displayed in a table with pagination. Two rows are shown per page, and additional data is fetched from the /consents API and added on top.
+
+
+### APIs
+
+POST /consents
+Request Payload:
+
+json
+Copy code
+{
+  "fname": "John Doe",
+  "email": "john.doe@example.com",
+  "consents": ["Receive newsletter", "Allow tracking"]
+}
+Response:
+
+Status: 201 Created
+
+GET /consents
+Response:
+
+Status: 200 OK
+
+json
+Copy code
+{
+  "data": [
+    {
+      "id": 1,
+      "fname": "John Doe",
+      "email": "john.doe@example.com",
+      "consents": ["Receive newsletter"]
+    },
+    {
+      "id": 2,
+      "fname": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "consents": ["Receive newsletter", "Allow tracking"]
+    },
+    // Additional data
+  ]
+}
+
+### Notes
+The client-side pagination displays two rows per page on the consents page.
+The consent form follows a dynamic flow: consent selector checkboxes are enabled after valid name and email inputs, and the "Give Consent" button is enabled after selecting at least one consent.
 
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

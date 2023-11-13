@@ -86,3 +86,11 @@ Launches the test runner in the interactive watch mode.\
 To check coverage use ```npm test -- --coverage```.
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### Screenshots
+Following are the screenshots of 2 pages:
+### 1. Give Consent
+<img width="1500" alt="Screenshot 2023-11-13 at 11 49 12" src="https://github.com/suyog-kalyankar/consent-management/assets/30463183/ea03ae72-e2b1-4440-9b41-f00c6cc6d0c9">
+
+### 2. Consents 
+<img width="1508" alt="Screenshot 2023-11-13 at 11 49 35" src="https://github.com/suyog-kalyankar/consent-management/assets/30463183/1522914a-659d-4414-b140-253627d8c6d3">
+

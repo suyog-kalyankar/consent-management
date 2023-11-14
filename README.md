@@ -46,7 +46,7 @@ Request Payload:
   "id": 1,
   "fname": "Suyog K",
   "email": "suyog.k@example.com",
-  "consents": ["Receive newsletter", "Allow tracking"]
+  "consents": ["Receive newsletter", "Be shown targeted ads"]
 }
 ```
 Response:
@@ -76,7 +76,7 @@ metadata: {
       "id": 2,
       "fname": "Suyog K",
       "email": "suyog.k@example.com",
-      "consents": ["Receive newsletter", "Allow tracking"]
+      "consents": ["Receive newsletter", "Be shown targeted ads"]
     },
     // Additional data
   ]

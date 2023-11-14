@@ -44,8 +44,8 @@ Request Payload:
 ```ruby
 {
   "id": 1,
-  "fname": "John Doe",
-  "email": "john.doe@example.com",
+  "fname": "Suyog K",
+  "email": "suyog.k@example.com",
   "consents": ["Receive newsletter", "Allow tracking"]
 }
 ```
@@ -68,14 +68,14 @@ metadata: {
   "data": [
     {
       "id": 1,
-      "fname": "John Doe",
-      "email": "john.doe@example.com",
+      "fname": "Suyog Kalyankar",
+      "email": "suyog.kalyankar@example.com",
       "consents": ["Receive newsletter"]
     },
     {
       "id": 2,
-      "fname": "Jane Smith",
-      "email": "jane.smith@example.com",
+      "fname": "Suyog K",
+      "email": "suyog.k@example.com",
       "consents": ["Receive newsletter", "Allow tracking"]
     },
     // Additional data
